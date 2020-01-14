@@ -23,12 +23,12 @@ class App extends React.Component {
 
         userRef.onSnapshot(snapShot => {
           setCurrentUser({
-              id: snapShot.id,
-              ...snapShot.data()
+            id: snapShot.id,
+            ...snapShot.data()
           });
         });
       } else {
-        setCurrentUser(userAuth)
+        setCurrentUser(userAuth);
       }
     });
   }
@@ -44,16 +44,16 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' component={HomePage} />
           <Route path='/shop' component={ShopPage} />
-          <Route 
-            exact 
-            path='/signin' 
-            render={() => 
+          <Route
+            exact
+            path='/signin'
+            render={() =>
               this.props.currentUser ? (
-              <Redirect to='/' />
+                <Redirect to='/' />
               ) : (
                 <SignInAndSignUpPage />
               )
-            } 
+            }
           />
         </Switch>
       </div>
@@ -69,7 +69,4 @@ const mapDispatchToProps = dispatch => ({
   setCurrentUser: user => dispatch(setCurrentUser(user))
 });
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(App);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
