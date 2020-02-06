@@ -8,7 +8,7 @@ import StripeCheckoutButton from '../../components/stripe-button/stripe-button.c
 import {
   selectCartItems,
   selectCartTotal
-} from '../../redux/cart/cart.selector';
+} from '../../redux/cart/cart.selectors';
 
 import './checkout.styles.scss';
 
