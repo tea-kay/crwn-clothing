@@ -25,6 +25,7 @@
   &:hover {
     .image {
       opacity: 0.8;
+      display: flex;
     }
 
     .custom-button {
@@ -47,6 +48,7 @@
 
     .price {
       width: 10%;
+      text-align: right;
     }
   }
 }
